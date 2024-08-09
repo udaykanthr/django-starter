@@ -2,8 +2,36 @@
 
 {% block content %} 
 
-    <div class="max-w-4xl mx-auto px-8 py-24">
-        <h1>New Project</h1>
+    <div class="max-w-4xl">
+        <div class="flex">
+
+            <div class="w-screen h-screen bg-gray-200 max-w-36">
+                <!-- Sidebar navigation items -->
+                <ul>
+                    <li><a href="#">Companies</a></li>
+                    <li><a href="#">Settings</a></li>
+                </ul>
+            </div>
+            <div class="w-screen h-screen bg-white px-8 py-24">
+                <!-- Content area -->
+                <div class="grid grid-cols-4 gap-4">
+                    <div class="card bg-gray-100 p-4 max-w-36">
+                        <h2 class="text-lg font-semibold">Company 1</h2>
+                        <div class="flex justify-end mt-2">
+                            <a href="#" class="text-blue-500 mr-2">Edit</a>
+                            <a href="#" class="text-red-500">Delete</a>
+                        </div>
+                    </div>
+                    <div class="card bg-gray-100 p-4 max-w-36">
+                        <h2 class="text-lg font-semibold">Company 2</h2>
+                        <div class="flex justify-end mt-2">
+                            <a href="#" class="text-blue-500 mr-2">Edit</a>
+                            <a href="#" class="text-red-500">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
 {% endblock %}
