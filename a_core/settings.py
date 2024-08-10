@@ -46,6 +46,9 @@ INSTALLED_APPS = [
     'django_htmx',
     'a_home',
     'a_users',
+    'tailwind',
+    'codegen',
+    'django_browser_reload',
 ]
 
 SITE_ID = 1
@@ -60,6 +63,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'allauth.account.middleware.AccountMiddleware',
     'django_htmx.middleware.HtmxMiddleware',
+    "django_browser_reload.middleware.BrowserReloadMiddleware",
+    'a_home.middleware.RedirectBasedOnAuthMiddleware',
 ]
 
 AUTHENTICATION_BACKENDS = [
@@ -144,9 +149,12 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/dashboard/'
 ACCOUNT_SIGNUP_REDIRECT_URL = "{% url 'account_signup' %}?next={% url 'profile-onboarding' %}"
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_EMAIL_REQUIRED = True
+
+TAILWIND_APP_NAME = 'codegen'
+NPM_BIN_PATH = "C:/Program Files/nodejs/npm.cmd"

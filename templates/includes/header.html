@@ -6,14 +6,14 @@
         </a>
     </div>
     <nav class="block relative">
-        <ul class="navitems flex items-center justify-center h-full">
+        <ul class="gap-4 navitems flex items-center justify-center h-full">
             {% if request.user.is_authenticated %}
             <li><a href="/">Home</a></li>
             <li x-data="{ dropdownOpen: false }" class="relative">
-                <a @click="dropdownOpen = !dropdownOpen" @click.away="dropdownOpen = false" class="cursor-pointer select-none">
+                <a @click="dropdownOpen = !dropdownOpen" @click.away="dropdownOpen = false" class="gap-1 flex flex-row cursor-pointer select-none">
                     <img class="h-8 w-8 rounded-full object-cover" src="{{ user.profile.avatar }}"/>
                     {{ user.profile.name }}
-                    <img x-bind:class="dropdownOpen && 'rotate-180 duration-300'" class="w-4" src="https://img.icons8.com/small/32/ffffff/expand-arrow.png"/>
+                    <img x-bind:class="dropdownOpen && 'rotate-180 duration-300'" class="w-4 h-4 top-2 relative" src="https://img.icons8.com/small/32/ffffff/expand-arrow.png"/>
                 </a>
                 <div x-show="dropdownOpen" x-cloak class="absolute right-0 bg-white text-black shadow rounded-lg w-40 p-2 z-20"
                 x-transition:enter="duration-300 ease-out"

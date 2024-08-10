@@ -22,9 +22,12 @@ from a_users.views import profile_view
 from a_home.views import *
 
 urlpatterns = [
+     path("__reload__/", include("django_browser_reload.urls")),
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
     path('', home_view, name="home"),
+    path('home/', home_view, name="home"),
+    path('dashboard/', dashboard_view, name="dashboard"),
     path('profile/', include('a_users.urls')),
     path('@<username>/', profile_view, name="profile"),
 ]
