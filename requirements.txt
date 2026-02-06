@@ -1,5 +1,5 @@
 Django
 pillow
 django-cleanup
-django-allauth
+django-allauth==0.54.0
 django-htmx
